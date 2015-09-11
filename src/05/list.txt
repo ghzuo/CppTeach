@@ -1,0 +1,8 @@
+# Tenericutes -> Firmicutes
+<P>Tenericutes<C>Mollicutes<O>Haloplasmatales<F>Haloplasmataceae<G>Haloplasma 
+<P>Tenericutes<C>Mollicutes<O>Anaeroplasmatales<F>Anaeroplasmataceae<G>Asteroleplasma 
+
+<C>Bacilli<O>Lactobacillales<F>Lactobacillaceae<G>Sharpea # Single-Species gen. nov. 2008
+
+＃ Unclassified phylum
+<P>Bacteria<C>Unclassified<O>Unclassified<F>Unclassified<G>Thermoanaerobaculum 

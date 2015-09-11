@@ -1,0 +1,82 @@
+body{
+    font-family:Georgia,arial,serif;
+    line-height:2em;
+    text-align:center;
+    margin:auto;
+}
+
+div.page{
+    width:900px;
+    margin:auto;
+    text-align:left;
+}
+
+h1{
+    padding-top:15px;
+    font-size:30px;
+}
+
+div.viewer{
+    margin:auto;
+    text-align:center;
+}
+
+
+table.viewer{
+    background:gray;
+    padding:20px;
+}
+
+div#chart{
+    width:550px;
+    height:550px;
+    border-width:2px;
+    border-style:solid;
+    border-color:black;
+    background:#EEEEEE;
+}
+
+input{
+    height:60px;
+    width:85px;
+    border-width:3px;
+    border-color:white;
+    margin-left:10px;
+    margin-top:8px;
+    vertical-align:middle;
+    font-size:20px;
+}
+
+input[type="button"]{
+    color: #ffffff;
+    background-color: #555555;    
+}
+
+input[type="text"]{
+    font-size:25px;
+    text-align:center;
+}
+
+input[disabled]{
+    color: #999999;
+}
+
+path.plot{
+    stroke:steelblue; 
+    stroke-width:2; 
+    fill: none;
+}
+
+text.axis{
+    font-family:Georgia,arial,serif;
+    font-style:italic;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.axis path,.axis line {
+    fill:none;
+    stroke:grey;
+    stroke-width:1; 
+    shape-rendering:crispEdges;
+}
