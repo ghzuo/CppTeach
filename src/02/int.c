@@ -5,6 +5,6 @@ int main(){
     int y = 1;
     int z = x+y;
     
-    printf("%d %u\n", z, z);
-    printf("%d %u\n", -1, -1);
+    printf("%d\t%u\n", z, z);
+    printf("%d\t%u\n", -1, -1);
 }
