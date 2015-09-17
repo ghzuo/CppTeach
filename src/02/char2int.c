@@ -14,7 +14,7 @@ int main(){
     printf("\n===Transition from char array to int===\n");
     int i;
     char xx[10];
-    for(int i=0; i<8; ++i ){
+    for(int i=0; i<8; ++i){
         strcat(xx,"d");
         int  yy = *(int*)xx;
         printf("Transition: %8s %10d\n", xx, yy);
