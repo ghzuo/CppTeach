@@ -2,4 +2,4 @@
 build
 a.out
 *.o
-
+*.DSYM
