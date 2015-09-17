@@ -3,15 +3,14 @@
 
 int main(int argc, char* argv[]){
 
-    int m = atoi(argv[1]);
-    
-    int n  = 16777215;
+    int n = 1024*1024*2;
+    int m = atoi(argv[1])*n;
     float f  = 1.0/(float)n;
 
     int i;
     float sum = 0;
-    for(i=0; i<m*n; ++i)
+    for(i=0; i<m; ++i)
         sum += f;
     
-    printf("%g\n", sum);
+    printf("The sum of %i %g is %g\n", m, f, sum);
 }
