@@ -19,5 +19,4 @@ int main(){
         int  yy = *(int*)xx;
         printf("Transition: %8s %10d\n", xx, yy);
     }
-    
 }
