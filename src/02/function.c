@@ -8,7 +8,7 @@ void p(int *x){
     *x = *x+10;
 }
 
-main(){
+int main(){
     
     int a = 10;
     v(a);

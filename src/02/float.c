@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]){
 
-    int n = 1024*1024*2;
+    int n = 1024*1024*8;
     int m = atoi(argv[1])*n;
     float f  = 1.0/(float)n;
 
