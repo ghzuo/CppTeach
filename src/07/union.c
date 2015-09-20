@@ -12,7 +12,8 @@ int main(){
     p.l = 10;
     p.d = 1000.0;
     strcpy(p.c, "ddddddd");
-    printf("Double: %f\n", p.d);
+    printf("Double: %g\n", p.d);
     printf("Long Integer: %ld\n", p.l);
     printf("String: %s\n", p.c);
+    printf("Hex Integer: %lx\n", p.l);
 }
