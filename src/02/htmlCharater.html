@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HTML特殊字符大全</title>
+    <style>
+        td.code{width:100px;overflow:hidden;}
+        td.code{width:50px;overflow:hidden;}
+        </style>
+  </head>
+  <body>
+    <script>
+      var html = [];
+      html.push("<table border='1' bordercolor='#77a594' align='center' style='border-collapse:collapse'>");
+      html.push("<tr><td class='char'>符号</td><td class='code'>编码</td><td class='char'>符号</td><td class='code'>编码</td><td class='char'>符号</td><td class='code'>编码</td><td class='char'>符号</td><td class='code'>编码</td></tr>");
+      for(var i = 1; i <= 10000; i++){
+        if(i % 4 == 1){
+          html.push("<tr>");
+        }
+            
+        html.push("<td class='char'>&#" + i + ";</td><td class='code'>&amp;#" + i + ";</td>");
+                 
+        if(i % 4 == 0){
+          html.push("</tr>");
+        }
+      }
+      html.push("</table>");
+      document.write(html.join(""));
+    </script>
+  </body>
+</html>
+
