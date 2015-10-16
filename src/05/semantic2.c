@@ -7,7 +7,7 @@ int main(){
     int sum;
 
     printf("Input a number: ");
-    scanf("%d", &in);
+    scanf("%d", in);
 
     sum = AllSum(in);
     printf("The AllSum of %d is %d\n", in, sum);
