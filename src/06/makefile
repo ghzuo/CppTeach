@@ -6,19 +6,27 @@ BINS = test rwtime rwdist
 CC  = gcc
 CXX = g++
 
-CFLAGS  = -O3
-LIBS = -lm 
+LIBS = -lm
+ifeq ($(DEF), DEBUG)
+        CFLAGS = -g -Wall -Wextra 
+else
+        ifeq ($(DEF), PROF)
+                CFLAGS = -O3 -pg 
+        else
+                CFLAGS = -O3 
+        endif
+endif
 
 all: $(BINS)
 
 rwdist: $(RWDIST)
-	$(CXX) $(RWDIST) -o $@ $(LIBS) $(CFLAGS)
+	$(CC) $(RWDIST) -o $@ $(LIBS) $(CFLAGS)
 
 rwtime: $(RWTIME)
-	$(CXX) $(RWTIME) -o $@ $(LIBS) $(CFLAGS)
+	$(CC) $(RWTIME) -o $@ $(LIBS) $(CFLAGS)
 
 test: $(RWTEST)
-	$(CXX) $(RWTEST) -o $@ $(LIBS) $(CFLAGS)
+	$(CC) $(RWTEST) -o $@ $(LIBS) $(CFLAGS)
 
 
 #############################################################

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void strAssign(char** dest, char* src){
-    *dest = malloc(strlen(src));
+    *dest = malloc(strlen(src)+1);
     strcpy(*dest, src);
 }
 

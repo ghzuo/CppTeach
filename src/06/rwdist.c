@@ -20,7 +20,7 @@ void usage(char* program){
 
 
 /* Main program */
-main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
 
     int ntime  = 100;
     int nstep  = 1000000;

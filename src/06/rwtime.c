@@ -19,7 +19,7 @@ void usage(char* program){
 
 
 /* Main program */
-main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
 
     int ntime = 100;		/* default run times */
     int nstep = 1000000;	/* default step number per run  */
