@@ -35,8 +35,10 @@ void streq(String* s){
 }
 
 int main(){
-    String str;  // = between String will be very dangerous ...
+    String str;  
     streq(&str);
     printf("%s\n", str.pstr);
 }
 
+// = between String will be very dangerous;
+// Cann't free memory when delete string ...
