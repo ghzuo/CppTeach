@@ -18,5 +18,5 @@ int main(){
     }
     printf("\n");
 
-    printf("%d\n", *x[0,1]);
+    printf("%d\n", *x[2,1]);
 }
