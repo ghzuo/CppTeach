@@ -21,15 +21,15 @@ int main(){
     char *astr  = "astrInitial";
     
     strcp(pstr);
-    printf("%s %s\n", pstr, astr);
+    printf("Case strcp: %s %s\n", pstr, astr);
 
     nstrcp(pstr);
-    printf("%s %s\n", pstr, astr);
+    printf("Case nstrcp: %s %s\n", pstr, astr);
     
     lstrcp(pstr);
-    printf("%s %s\n", pstr, astr);
+    printf("Case lstrcp: %s %s\n", pstr, astr);
 
     strcp(astr);
-    printf("%s %s\n", pstr, astr);
+    printf("Case strcp astr %s %s\n", pstr, astr);
 }
 

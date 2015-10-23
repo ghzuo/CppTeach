@@ -17,3 +17,4 @@ int main(){
     printf("String: %s\n", p.c);
     printf("Hex Integer: %lx\n", p.l);
 }
+

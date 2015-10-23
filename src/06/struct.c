@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Pad {
+typedef struct _pad {
     long l;
     double d;
     char c[8];
-};
+} Pad;
         
 int main(){
-    struct Pad p;
+    Pad p;
     strcpy(p.c, "ddddddd");
     p.l = 10;
     p.d = 1000.0;
@@ -17,3 +17,4 @@ int main(){
     printf("String: %s\n", p.c);
     printf("Hex Integer: %lx\n", p.l);
 }
+
