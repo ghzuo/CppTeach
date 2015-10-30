@@ -14,6 +14,7 @@ struct MyString{
     ~MyString();
 
     int count(char);
+    int count(const char*);
     
     void operator=(char);
     void operator=(const char*);
@@ -66,6 +67,14 @@ int MyString::count(char v){
     return n;
 }
 
+int MyString::count(const char* v){
+    int n = 0;
+    for(int i=0; i<strlen(v); ++i){
+        n += count(v[i]);
+    }
+    return n;
+}
+
 void MyString::operator=(const char* v){
     char* pTmp = (char*)realloc(pstr, strlen(v)+1);
     if(pTmp == NULL){
@@ -100,7 +109,13 @@ int main(){
          << " 's' in the string \""
          << str << '"' <<  endl;
 
+    cout << "There are " << str.count("st")
+         << " 's' or 'y' in the string \""
+         << str << '"' <<  endl;
+
     MyString str2;
+    count << str2 << endl;
+    
     str2 = str;
     cout << str2 << "  " << str << endl;
 
