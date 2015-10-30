@@ -114,7 +114,7 @@ int main(){
          << str << '"' <<  endl;
 
     MyString str2;
-    count << str2 << endl;
+    cout << str2 << endl;
     
     str2 = str;
     cout << str2 << "  " << str << endl;
