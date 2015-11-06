@@ -28,5 +28,5 @@ int main(){
     foo(y);
     foo(z);
     foo(a);
-    foo(b);
+//    foo(b);
 }

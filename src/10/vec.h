@@ -2,11 +2,8 @@
 #define VEC_H
 
 struct Vec{
-    vector<float> data;
+    float data[ndim];
     
-    Vec(int);
-    void init(const vector<float>&) const;
-
     float model() const;
     float ndim() const;
     float getdim(int) const;

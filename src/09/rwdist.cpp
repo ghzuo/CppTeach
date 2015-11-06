@@ -31,20 +31,20 @@ int main(int argc, char *argv[]){
     /* Get the Argments */
     char ch;
     while (( ch = getopt(argc, argv, "t:d:n:o:h")) != -1){ 
-	switch (ch){ 
-	case 't': 
-	    ntime = atoi(optarg); break; 
-	case 'd': 
-	    dist = atof(optarg); break;
-	case 'n': 
-	    nstep = atoi(optarg); break; 
-	case 'o': 
-	    filename = optarg; break; 
-	case 'h':
-	    usage(argv[0]);
-	case '?': 
-	    usage(argv[0]); 
-	} 
+        switch (ch){
+            case 't':
+                ntime = atoi(optarg); break;
+            case 'd':
+                dist = atof(optarg); break;
+            case 'n':
+                nstep = atoi(optarg); break;
+            case 'o':
+                filename = optarg; break;
+            case 'h':
+                usage(argv[0]);
+            case '?':
+                usage(argv[0]);
+        }
     }
     
     /* run random wolk */
@@ -53,8 +53,8 @@ int main(int argc, char *argv[]){
 	Status theOne;
 	while(theOne.n < nstep && theOne.distance()<dist)
 	    theOne.step();
-	fprintf(fp, "%10d %10d\n", i, theOne.n);
-	
+        fprintf(fp, "%10d %10d\n", i, theOne.n);
     }
     fclose(fp);
 }
+

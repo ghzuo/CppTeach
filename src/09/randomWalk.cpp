@@ -24,3 +24,4 @@ void Status::output(FILE* fp){
 float Status::distance(){
     return sqrt(x*x + y*y);
 };
+

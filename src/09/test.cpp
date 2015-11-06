@@ -11,7 +11,8 @@ int main(){
     srand(time(0));
     Status theOne;
     while(theOne.distance() < 10){
-	theOne.step();
-	theOne.output(stdout);
+        theOne.step();
+        theOne.output(stdout);
     }
 }
+
