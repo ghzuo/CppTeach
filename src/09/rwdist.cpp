@@ -1,25 +1,5 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <math.h>
-#include <unistd.h>
-#include <time.h>
-#include "randomWalk.h"
+#include "rwdist.h"
 
-/* Usage ... */
-void usage(char* program){
-    fprintf(stderr, "\nProgram Usage:\n%s\n", program);
-    fprintf(stderr, "     [ -t  100  ]       times to be run, default 1000\n");
-    fprintf(stderr, "     [ -d  100  ]       target distance per run, default 100\n");
-    fprintf(stderr, "     [ -n  10000000 ]   max steps per run, default 10000000\n");
-    fprintf(stderr, "     [ -o output.txt ]  the output file, default: output.txt\n");
-    fprintf(stderr, "     [ -h ]             display this information\n");
-    fprintf(stderr, "\n");
-    exit(1);
-}
-
-
-/* Main program */
 int main(int argc, char *argv[]){
 
     srand(time(0));         /* set the random seed by time*/
@@ -50,11 +30,26 @@ int main(int argc, char *argv[]){
     /* run random wolk */
     FILE* fp = fopen(filename, "w");
     for(int i=0; i<ntime; ++i){
-	Status theOne;
-	while(theOne.n < nstep && theOne.distance()<dist)
-	    theOne.step();
+        Status theOne;
+        while(theOne.n < nstep && theOne.distance()<dist)
+            theOne.step();
         fprintf(fp, "%10d %10d\n", i, theOne.n);
     }
     fclose(fp);
 }
+
+/* Usage ... */
+void usage(char* program){
+    fprintf(stderr, "\nProgram Usage:\n%s\n", program);
+    fprintf(stderr, "     [ -t  100  ]       times to be run, default 1000\n");
+    fprintf(stderr, "     [ -d  100  ]       target distance per run, default 100\n");
+    fprintf(stderr, "     [ -n  10000000 ]   max steps per run, default 10000000\n");
+    fprintf(stderr, "     [ -o output.txt ]  the output file, default: output.txt\n");
+    fprintf(stderr, "     [ -h ]             display this information\n");
+    fprintf(stderr, "\n");
+    exit(1);
+}
+
+
+
 
