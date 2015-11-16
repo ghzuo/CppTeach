@@ -5,7 +5,7 @@
 !makefile
 .DS_Store
 build
-a.out
+*.out
 *.o
 *.exe
 *.dat
