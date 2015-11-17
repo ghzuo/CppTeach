@@ -14,5 +14,6 @@ int main(){
         theOne.step();
         theOne.output(stdout);
     }
+
 }
 
