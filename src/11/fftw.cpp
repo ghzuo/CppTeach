@@ -35,3 +35,4 @@ int main(){
     if(din!=NULL) fftw_free(din);
     if(out!=NULL) fftw_free(out);
 }
+
