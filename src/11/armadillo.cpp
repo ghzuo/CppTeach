@@ -1,3 +1,5 @@
+#define  ARMA_DONT_USE_WRAPPER
+#define  ARMA_USE_LAPACK
 #include <iostream>
 #include <armadillo>
 using namespace std;

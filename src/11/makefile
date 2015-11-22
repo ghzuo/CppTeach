@@ -3,13 +3,13 @@ EIGENFFT = eigenfft.o
 LAPACK = lapack.o
 EIGEN = eigen.o
 ARMADILLO = armadillo.o
-BINS = fftw eigenfft lapack eigen armadillo
+BINS = fftw eigenfft  eigen armadillo lapack
 
 CC  = gcc -std=c11
 CXX = g++ -std=c++11
 
-LIBS   = -L/usr/local/lib -lm -lfftw3 -llapack -lblas -larmadillo
-CFLAGS = -I/usr/local/include -I/usr/local/include/eigen3
+LIBS   = -L/usr/local/lib -lm -lfftw3 -larmadillo -lblas -llapack
+CFLAGS = -I/usr/local/include -I/usr/local/include/eigen3 -I/usr/include/eigen3
 ifeq ($(DEF), DEBUG)
         CFLAGS +=  -g -Wall -Wextra
 else
