@@ -1,25 +1,32 @@
-#include <stdio.h>
-
-extern "C" void dgesv_(const int *N, const int *nrhs, double *A,
-                       const int *lda, int *ipiv, double *b,
-                       const int *ldb, int *info);
-
+#include <iostream>
+using namespace std;
+extern "C" void dsyev_(const char *JOBZ, const char *UPLO,
+                       const int *N, double *A, const int *LDA,
+                       double *W, double *WORK, const int *LWORK,
+                       int *info);
 int main(){
-    double A[9] = {76, 27, 18, 25, 89, 60, 11, 51, 32};
-    double b[3] = {10, 7, 43};
 
-    int N = 3;
-    int nrhs = 1;
-    int lda = 3;
-    int ipiv[3];
-    int ldb = 3;
+    char jobz = 'V';
+    char uplo = 'L';
+    int  N = 2;
+    double A[4] = {1.0, 2.0, 2.0, 3.0};
+    int  lda = N;
+    double W[2];
+    int lwork = 10;
+    double work[10];
     int info;
     
-    dgesv_(&N, &nrhs, A, &lda, ipiv, b, &ldb, &info);
-
-    if(info == 0) /* succeed */
-        printf("The solution is %lf %lf %lf\n", b[0], b[1], b[2]);
-    else
-        fprintf(stderr, "dgesv_ fails %d\n", info);
+    dsyev_(&jobz, &uplo, &N, A, &lda, W, work, &lwork, &info);
+        
+    if(info == 0) /* succeed */{
+        cout << "The eigenvalues of A are:\n"
+             << W[0] << '\n' << W[1] << endl;
+        cout << "Here's a matrix whose columns are eigenvectors of A \n"
+             << "corresponding to these eigenvalues:\n"
+             << A[0] << "  " << A[1] << "\n"
+             << A[2] << "  " << A[3] << endl;
+    }else{
+        cerr << "dgesv_ fails %d\n" <<  info << endl;
+    }
 }
 

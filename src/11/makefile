@@ -1,9 +1,10 @@
 FFTW = fftw.o
 EIGENFFT = eigenfft.o
+ARMADILLOFFT = armadillofft.o
 LAPACK = lapack.o
 EIGEN = eigen.o
 ARMADILLO = armadillo.o
-BINS = fftw eigenfft  eigen armadillo lapack
+BINS = fftw eigenfft armadillofft eigen armadillo lapack 
 
 CC  = gcc -std=c11
 CXX = g++ -std=c++11
@@ -27,6 +28,8 @@ fftw: $(FFTW)
 	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(FFTW)
 eigenfft: $(EIGENFFT)
 	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(EIGENFFT)
+armadillofft: $(ARMADILLOFFT)
+	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(ARMADILLOFFT)
 lapack: $(LAPACK)
 	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(LAPACK)
 eigen: $(EIGEN)
