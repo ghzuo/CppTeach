@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-extern "C" void dsyev(const char *JOBZ, const char *UPLO,
+extern "C" void dsyev_(const char *JOBZ, const char *UPLO,
                        const int *N, double *A, const int *LDA,
                        double *W, double *WORK, const int *LWORK,
                        int *info);
@@ -16,7 +16,7 @@ int main(){
     double work[10];
     int info;
     
-    dsyev(&jobz, &uplo, &N, A, &lda, W, work, &lwork, &info);
+    dsyev_(&jobz, &uplo, &N, A, &lda, W, work, &lwork, &info);
         
     if(info == 0) /* succeed */{
         cout << "The eigenvalues of A are:\n"
