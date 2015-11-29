@@ -9,8 +9,8 @@ BINS = fftw eigenfft armadillofft eigen armadillo lapack
 CC  = gcc -std=c11
 CXX = g++ -std=c++11
 
-# LIBS   = -L/usr/local/lib -L/opt/intel/mkl/lib/intel64_lin -lm -larmadillo -lmkl_intel_lp64 -lmkl_intel_thread -liomp5 -lmkl_core  -lpthread  
-LIBS   = -L/usr/local/lib -lm -lfftw3 -larmadillo -lblas -llapack
+LIBS   = -L/usr/local/lib -lm -larmadillo -lmkl_intel_lp64 -lmkl_intel_thread -liomp5 -lmkl_core  -lpthread  
+#LIBS   = -L/usr/local/lib -lm -lfftw3 -larmadillo -lblas -llapack
 CFLAGS = -I/usr/local/include -I/usr/local/include/eigen3 -I/usr/include/eigen3
 ifeq ($(DEF), DEBUG)
         CFLAGS +=  -g -Wall -Wextra
