@@ -1,0 +1,6 @@
+ABC
+BCA
+AC
+BCD
+CBD
+DA

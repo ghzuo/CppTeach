@@ -1,5 +1,6 @@
 RMSD = rmsd.o
-BINS = rmsd
+STRCOUNT = strCount.o
+BINS = rmsd strCount
 
 CC  = gcc -std=c11
 CXX = g++ -std=c++11
@@ -21,6 +22,9 @@ all: $(BINS)
 
 rmsd: $(RMSD)
 	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(RMSD)
+
+strCount: $(STRCOUNT)
+	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(STRCOUNT)
 
 #############################################################
 
