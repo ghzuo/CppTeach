@@ -20,8 +20,7 @@ public:
     static void nDim(int);
     static int  nDim();
     MyVector();
-    
-    
+
     double& operator[](int);
     double operator[](int) const;
 
