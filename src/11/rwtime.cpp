@@ -1,7 +1,7 @@
 #include "rwtime.h"
 
 int main(int argc, char *argv[]){
-
+     
     srand(time(0));             /* set the random seed by time*/
     int ntime = 100;		/* default run times */
     int nstep = 1000000;	/* default step number per run  */
