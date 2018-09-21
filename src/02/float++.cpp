@@ -3,7 +3,7 @@ using namespace std;
 
 int main(int argc, char* argv[]){
     int   m = atoi(argv[1]);
-    int   n = 16777216;
+    int   n = 1024*1024*8;
     float f = 1.0/(float)n;
 
     float sum = 0.0;
