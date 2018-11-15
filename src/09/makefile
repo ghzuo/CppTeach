@@ -4,7 +4,8 @@ ARMADILLOFFT = armadillofft.o
 LAPACK = lapack.o
 EIGEN = eigen.o
 ARMADILLO = armadillo.o
-BINS = fftw eigenfft armadillofft eigen armadillo lapack 
+RMSD = rmsd.o
+BINS = fftw eigenfft armadillofft eigen armadillo lapack rmsd
 
 CC  = gcc -std=c11
 CXX = g++ -std=c++11
@@ -37,8 +38,8 @@ eigen: $(EIGEN)
 	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(EIGEN)
 armadillo: $(ARMADILLO)
 	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(ARMADILLO)
-
-
+rmsd: $(RMSD)
+	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(RMSD)
 
 #############################################################
 

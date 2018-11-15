@@ -1,11 +1,11 @@
 RWDIST = randomWalk.o rwdist.o
 RWTIME = randomWalk.o rwtime.o
 RWTEST = randomWalk.o test.o
-BINS = test rwtime rwdist
+STRCOUNT = strCount.o
+BINS = test rwtime rwdist strCount
 
-CC  = gcc
-CXX = g++
-
+CC  = gcc -std=c11
+CXX = g++ -std=c++11
 
 LIBS = -lm
 ifeq ($(DEF), DEBUG)
@@ -30,6 +30,8 @@ rwtime: $(RWTIME)
 test: $(RWTEST)
 	$(CXX) $(RWTEST) -o $@ $(LIBS) $(CFLAGS)
 
+strCount: $(STRCOUNT)
+	$(CXX) $(LIBS) $(CFLAGS) -o $@ $(STRCOUNT)
 
 #############################################################
 
