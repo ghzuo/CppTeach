@@ -17,27 +17,31 @@ int main(int argc, char **argv){
 
   // basic parameter, serial 
   int rank, size, tag, i;
-  MPI_Status status;
-  char message[20];
+  MPI_Status status;  // tag for status
+  char message[20] = "Hello, Before!";
 
   // inital the parameters for parallel
-  MPI_Init(&argc, &argv);
-  MPI_Comm_size(MPI_COMM_WORLD, &size);
+  MPI_Init(&argc, &argv);  // initial by paramenters
+  MPI_Comm_size(MPI_COMM_WORLD, &size); // MPI_COMM_WORLD: group for all processes
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
+  //output message in every processes
+  std::cout << "node " << rank << ": " << message << std::endl;
+
+  // communicate between processes ...
   tag = 7;  // tag for info
   if(rank == 0) {
-    strcpy(message, "Hello, world");
+    strcpy(message, "Hello, After!");
     for(int i=1; i<size; ++i){
-      // send message from master to other nodes
+      // send message from master to other processes
       MPI_Send(message, 13, MPI_CHAR, i, tag, MPI_COMM_WORLD);
     }
   } else {
-    // receve message from master at other nodes
+    // receive message from master at other processes
     MPI_Recv(message, 13, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
   }
 
-  //output at every nodes
+  //output message in every processes
   std::cout << "node " << rank << ": " << message << std::endl;
 
   // end of parallel
