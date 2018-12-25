@@ -14,23 +14,32 @@
 #include <mpi.h>
 
 int main(int argc, char **argv){
+
+  // basic parameter, serial 
   int rank, size, tag, i;
   MPI_Status status;
   char message[20];
 
+  // inital the parameters for parallel
   MPI_Init(&argc, &argv);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-  tag = 7;
+  tag = 7;  // tag for info
   if(rank == 0) {
     strcpy(message, "Hello, world");
     for(int i=1; i<size; ++i){
+      // send message from master to other nodes
       MPI_Send(message, 13, MPI_CHAR, i, tag, MPI_COMM_WORLD);
     }
   } else {
+    // receve message from master at other nodes
     MPI_Recv(message, 13, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
   }
+
+  //output at every nodes
   std::cout << "node " << rank << ": " << message << std::endl;
+
+  // end of parallel
   MPI_Finalize();
 }
