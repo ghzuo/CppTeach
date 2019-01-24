@@ -18,6 +18,7 @@ int main() {
 
   int sum(0);
 #pragma omp parallel for reduction(+:sum)
+//#pragma omp parallel for 
   for (int i = 0; i < 100; ++i) {
     sum += i;
     usleep(10);
