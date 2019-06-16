@@ -30,7 +30,6 @@ RUN apt-get install -y ssh
 RUN apt-get clean
 
 ## for workplace
-VOLUME [ "/data" ]
-COPY src /data/src
-WORKDIR /data
+COPY src /root/src
+WORKDIR /root
 CMD [ "/bin/bash" ]
