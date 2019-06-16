@@ -1,0 +1,52 @@
+/*
+ * Copyright (c) 2018  T-Life Research Center, Fudan University, Shanghai, China.
+ * See the accompanying Manual for the contributors and the way to cite this work.
+ * Comments and suggestions welcome. Please contact
+ * Dr. Guanghong Zuo <ghzuo@fudan.edu.cn>
+ * 
+ * @Author: Dr. Guanghong Zuo
+ * @Date: 2018-08-02 11:57:25
+ * @Last Modified By: Dr. Guanghong Zuo
+ * @Last Modified Time: 2018-08-02 11:57:26
+ */
+
+// Configuring tasks.json for C/C++ debugging
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team        
+// ${file}: the current opened file                     
+// ${fileBasename}: the current opened file's basename 
+// ${fileDirname}: the current opened file's dirname    
+// ${fileExtname}: the current opened file's extension  
+// ${cwd}: the current working directory of the spawned process
+
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "(Debug) Launch",
+    "preLaunchTask": "build",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${fileDirname}/${fileBasenameNoExtension}",
+    "args": [],
+    "stopAtEntry": false,
+    "cwd": "${fileDirname}",
+    "environment": [],
+    "externalConsole": true,
+    "linux": {
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    "osx": {
+      "MIMode": "lldb"
+    },
+    "windows": {
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
+    },
+    "setupCommands": [{
+      "description": "Enable pretty-printing for lldb",
+      "text": "-enable-pretty-printing",
+      "ignoreFailures": true
+    }]
+  }]
+}
