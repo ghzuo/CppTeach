@@ -31,5 +31,6 @@ RUN apt-get clean
 
 ## for workplace
 VOLUME [ "/data" ]
+COPY src /data/src
 WORKDIR /data
 CMD [ "/bin/bash" ]
