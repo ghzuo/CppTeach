@@ -3,6 +3,7 @@
 !*/
 !Makefile
 !makefile
+!Dockerfile
 .DS_Store
 build
 *.out
