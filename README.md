@@ -11,13 +11,16 @@ Source codes and tools for C/C++ teaching.
 ## Docker Usages
 
 1. Install docker in computer: [Docker Tutorial](https://www.runoob.com/docker/docker-tutorial.html)
-2. Build/download docker image: `docker build -t="YourName/CppLearn" .` or `docker pull ghzuo/cppteach`
-3. Start new container from image: `docker run --name CppLearn -i -t -p 8080:80 YourName/CppLearn`
-4. Start an existed container: `docker start -i CppLearn`
+2. Build/download docker image: `docker build -t="yourname/cpplearn" .` or `docker pull ghzuo/cppteach`
+3. Start new container from image: `docker run --name cpplearn -it -v $PWD/src:/home/user/src -p 8080:80 yourname/cpplearn`
+4. Start an existed container: `docker start -i cpplearn`
 5. Exit and stop container: `exit` in docker terminal
 6. Exit container without stop: `Ctrl-P-Q`
-7. Attach a running container: `docker attach CppLearn`
-8. Start the webserver: `apachectl start` in docker terminal, and brown it by url "localhost:8080"
+7. Attach a running container: `docker attach cpplearn`
+8. Start the webserver:
+   - change user to root by `su`  in docker terminal (password is "root")
+   - start webserver `apachectl start` in docker terminal
+   - brown it by url "localhost:8080"
 
 ## Todo
 

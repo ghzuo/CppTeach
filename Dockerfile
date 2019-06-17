@@ -30,6 +30,8 @@ RUN apt-get install -y ssh
 RUN apt-get clean
 
 ## for workplace
-COPY src /root/src
-WORKDIR /root
+RUN echo "root:root" | chpasswd
+RUN useradd -m user -s /bin/bash
+USER user
+WORKDIR /home/user
 CMD [ "/bin/bash" ]
