@@ -19,6 +19,10 @@ Source codes and tools for C/C++ teaching.
 7. Attach a running container: `docker attach cpplearn`
 8. Brown webserver by url "localhost:8080"
 
+## Suggestion
+
+1. Vscode + Docker + Remote Development: support manage docker and remote develop in Container/SSH
+
 ## Todo
 
 1. Revise the display server by Cling-jupyter

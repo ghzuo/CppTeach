@@ -3,12 +3,11 @@ LABEL Version=0.1 \
   MAINTAINER="Guanghong Zuo<ghzuo@fudan.edu.cn"\
   description="Docker image for C/C++ teaching" 
 
-  ## for time zone
-ENV TZ Asia/Shanghai
+## for timezone
 ENV DEBIAN_FRONTEND noninteractive
-RUN echo $TZ > /etc/timezone 
+RUN echo "Asia/Shanghai" > /etc/timezone 
 RUN apt-get update -y && apt-get install -yqq tzdata 
-RUN rm /etc/localtime && ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
+RUN rm /etc/localtime && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 ## for develop environment
@@ -24,14 +23,16 @@ RUN apt-get install -yqq libboost-all-dev
 RUN apt-get install -yqq libgsl-dev
 
 ## for web server
-RUN apt-get install -yqq apache2 php nmap
+RUN apt-get install -yqq apache2 php
 RUN /bin/rm -f /var/www/html/*
 ADD serv/web/* /var/www/html/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 EXPOSE 80
 
 ## other Tools
-RUN apt-get install -yqq ssh lftp
+RUN apt-get install -yqq ssh
+RUN apt-get install -yqq lftp
+RUN apt-get install -yqq nmap
 
 ## clean apt-get
 RUN apt-get clean
