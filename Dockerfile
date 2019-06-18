@@ -7,31 +7,36 @@ LABEL Version=0.1 \
 ENV TZ Asia/Shanghai
 ENV DEBIAN_FRONTEND noninteractive
 RUN echo $TZ > /etc/timezone 
-RUN apt-get update && apt-get install -y tzdata 
+RUN apt-get update -y && apt-get install -yqq tzdata 
 RUN rm /etc/localtime && ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 ## for develop environment
-RUN apt-get install -y build-essential 
-RUN apt-get install -y cmake vim less
-RUN apt-get install -y libeigen3-dev libarmadillo-dev libfftw3-dev
-RUN apt-get install -y libboost-all-dev liblapack-dev libnetcdf-dev
+RUN apt-get install -yqq build-essential
+RUN apt-get install -yqq gdb valgrind gperf
+RUN apt-get install -yqq cmake
+RUN apt-get install -yqq git 
+RUN apt-get install -yqq vim less
+RUN apt-get install -yqq libeigen3-dev libarmadillo-dev 
+RUN apt-get install -yqq libfftw3-dev liblapack-dev 
+RUN apt-get install -yqq libnetcdf-dev
+RUN apt-get install -yqq libboost-all-dev
+RUN apt-get install -yqq libgsl-dev
 
 ## for web server
-RUN apt-get install -y apache2 php nmap
+RUN apt-get install -yqq apache2 php nmap
 RUN /bin/rm -f /var/www/html/*
 ADD serv/web/* /var/www/html/
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 EXPOSE 80
 
 ## other Tools
-RUN apt-get install -y ssh
+RUN apt-get install -yqq ssh lftp
 
 ## clean apt-get
 RUN apt-get clean
 
 ## for workplace
-RUN echo "root:root" | chpasswd
-RUN useradd -m user -s /bin/bash
-USER user
-WORKDIR /home/user
-CMD [ "/bin/bash" ]
+COPY serv/docker/autorun.sh /etc/init.d/autorun.sh
+WORKDIR /root
+CMD [ "/etc/init.d/autorun.sh" ]
