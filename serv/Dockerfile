@@ -13,12 +13,9 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 ## for web server
 RUN apt-get install -yqq apache2 php
 RUN /bin/rm -f /var/www/html/*
-ADD ../web/* /var/www/html/
+ADD web/* /var/www/html/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 EXPOSE 80
-
-## other Tools
-RUN apt-get install -yqq nmap
 
 ## clean apt-get
 RUN apt-get clean
