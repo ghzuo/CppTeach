@@ -21,6 +21,5 @@ EXPOSE 80
 RUN apt-get clean
 
 ## for workplace
-COPY autorun.sh /etc/init.d/autorun.sh
-WORKDIR /root
-CMD [ "/etc/init.d/autorun.sh" ]
+COPY httpd-foreground /usr/local/bin/
+CMD [ "httpd-foreground" ]

@@ -19,10 +19,13 @@ Source codes and tools for C/C++ teaching.
 6. Exit container without stop: `Ctrl-P-Q`
 7. Attach a running container: `docker attach cpplearn`
 
-### For Server
+### For Plot Server
 1. Build/download docker image: `docker build -t="yourname/cppserv" .` (in serv) or `docker pull ghzuo/cppserv`
-2. Start new container from image: `docker run --name cppserv -p 8080:80 yourname/cppserv`
-3. Brown webserver by url "localhost:8080"
+2. Start new container from image: `docker run --name cppserv -p 8080:80 yourname/cppserv &`
+3. Start an existed container: `docker start cppserv`
+4. Stop a running container: `docker stop cppserv`
+5. Brown webserver by url "localhost:8080"
+6. A better method for plot is jupyter-notebook
 
 ## Suggestion
 
