@@ -42,7 +42,7 @@
       "${fileDirname}/${fileBasenameNoExtension}"
     ],
     "osx": {
-      "command": "g++-8",
+      "command": "g++",
     },
     "linux": {
       "command": "g++",
