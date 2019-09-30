@@ -9,7 +9,6 @@
  * @Last Modified By: Dr. Guanghong Zuo
  * @Last Modified Time: 2018-08-02 11:57:26
  */
-
 // Configuring tasks.json for C/C++ debugging
 // Available variables which can be used inside of strings.
 // ${workspaceRoot}: the root folder of the team        
@@ -18,35 +17,37 @@
 // ${fileDirname}: the current opened file's dirname    
 // ${fileExtname}: the current opened file's extension  
 // ${cwd}: the current working directory of the spawned process
-
 {
   "version": "0.2.0",
-  "configurations": [{
-    "name": "(Debug) Launch",
-    "preLaunchTask": "build",
-    "type": "cppdbg",
-    "request": "launch",
-    "program": "${fileDirname}/${fileBasenameNoExtension}",
-    "args": [],
-    "stopAtEntry": false,
-    "cwd": "${fileDirname}",
-    "environment": [],
-    "externalConsole": true,
-    "linux": {
-      "MIMode": "gdb",
-      "miDebuggerPath": "/usr/bin/gdb"
-    },
-    "osx": {
-      "MIMode": "lldb"
-    },
-    "windows": {
-      "MIMode": "gdb",
-      "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
-    },
-    "setupCommands": [{
-      "description": "Enable pretty-printing for lldb",
-      "text": "-enable-pretty-printing",
-      "ignoreFailures": true
-    }]
-  }]
+  "configurations": [
+    {
+      "name": "(Debug) Launch C++",
+      //"preLaunchTask": "build C++",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "linux": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+      "osx": {
+        "MIMode": "lldb"
+      },
+      "windows": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
+      },
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for lldb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
 }

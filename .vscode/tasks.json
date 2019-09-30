@@ -9,7 +9,6 @@
  * @Last Modified By: Dr. Guanghong Zuo
  * @Last Modified Time: 2018-08-10 13:26:13
  */
-
 // Configuring tasks.json for C/C++ debugging 
 // Available variables which can be used inside of strings.
 // ${workspaceRoot}: the root folder of the team        
@@ -18,37 +17,70 @@
 // ${fileDirname}: the current opened file's dirname    
 // ${fileExtname}: the current opened file's extension  
 // ${cwd}: the current working directory of the spawned process
-
 {
   "version": "2.0.0",
-  "tasks": [{
-    "label": "build",
-    "type": "shell",
-    "group": {
-      "kind": "build",
-      "isDefault": true
+  "tasks": [
+    {
+      "label": "build C++",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "args": [
+        "-g",
+        "--std=c++11",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "osx": {
+        "command": "g++",
+      },
+      "linux": {
+        "command": "g++",
+      },
+      "windows": {
+        "command": "mingw-g++",
+      },
     },
-    "presentation": {
-      "echo": true,
-      "reveal": "always",
-      "focus": false,
-      "panel": "shared"
-    },
-    "problemMatcher": [],
-    "args": [
-      "--std=c++11",
-      "${file}",
-      "-o",
-      "${fileDirname}/${fileBasenameNoExtension}"
-    ],
-    "osx": {
-      "command": "g++",
-    },
-    "linux": {
-      "command": "g++",
-    },
-    "windows": {
-      "command": "mingw-g++",
-    },
-  }]
+    {
+      "label": "build C",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "args": [
+        "-g",
+        "--std=c11",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "osx": {
+        "command": "gcc",
+      },
+      "linux": {
+        "command": "gcc",
+      },
+      "windows": {
+        "command": "mingw-gcc",
+      },
+    }
+  ]
 }
