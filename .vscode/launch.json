@@ -27,7 +27,8 @@
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
-      "cwd": "${workspaceFolder}",
+      "cwd": "${fileDirname}",
+      "stopAtEntry": true,
       "environment": [],
       "externalConsole": true,
       "linux": {
@@ -47,7 +48,12 @@
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
-      ]
+      ],
+      "logging": {
+        "trace": true,
+        "traceResponse": true,
+        "engineLogging": true
+      }
     }
   ]
 }
