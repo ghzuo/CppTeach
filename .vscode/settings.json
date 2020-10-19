@@ -17,9 +17,7 @@
     "statusBarItem.hoverBackground": "#1f6fd0",
     "statusBar.foreground": "#e7e7e7",
     "activityBar.activeBackground": "#1f6fd0",
-    "activityBar.activeBorder": "#ee90bb",
-    "statusBar.border": "#1857a4",
-    "titleBar.border": "#1857a4"
+    "activityBar.activeBorder": "#ee90bb"
   },
   "peacock.color": "#1857a4",
   "python.formatting.provider": "yapf"
