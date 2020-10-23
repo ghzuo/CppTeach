@@ -30,34 +30,34 @@
       "presentation": {
         "echo": true,
         "reveal": "always",
-        "focus": false,
+        "focus": true,
         "panel": "shared"
       },
       "problemMatcher": [],
       "args": [
-        "-g",
+        "-Xclang",
+        "-fopenmp",
         "--std=c++11",
         "${file}",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-L/usr/local/lib",
+        "-lomp"
       ],
       "osx": {
-        "command": "g++",
+        "command": "g++"
       },
       "linux": {
-        "command": "g++",
+        "command": "g++"
       },
       "windows": {
-        "command": "mingw-g++",
-      },
+        "command": "mingw-g++"
+      }
     },
     {
       "label": "build C",
       "type": "shell",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -66,21 +66,56 @@
       },
       "problemMatcher": [],
       "args": [
-        "-g",
         "--std=c11",
         "${file}",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}"
       ],
       "osx": {
-        "command": "gcc",
+        "command": "gcc"
       },
       "linux": {
-        "command": "gcc",
+        "command": "gcc"
       },
       "windows": {
-        "command": "mingw-gcc",
+        "command": "mingw-gcc"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "C/C++: clang++ build active file",
+      "command": "/Users/ghzuo/miniconda3/bin/clang++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "C/C++: g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
     }
   ]
 }
