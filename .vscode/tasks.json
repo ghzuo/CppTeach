@@ -37,6 +37,7 @@
       "args": [
         "-Xclang",
         "-fopenmp",
+        "-g",
         "--std=c++11",
         "${file}",
         "-o",
@@ -67,6 +68,7 @@
       "problemMatcher": [],
       "args": [
         "--std=c11",
+        "-g",
         "${file}",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}"
