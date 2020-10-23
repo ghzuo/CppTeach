@@ -25,7 +25,7 @@
       "type": "shell",
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
       },
       "presentation": {
         "echo": true,
@@ -61,7 +61,7 @@
       "presentation": {
         "echo": true,
         "reveal": "always",
-        "focus": false,
+        "focus": true,
         "panel": "shared"
       },
       "problemMatcher": [],
