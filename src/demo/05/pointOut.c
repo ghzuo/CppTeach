@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h> 
 #define MAX_SIZE 10
 
-int main(){
+int main(int argc, char* argv[]){
     int array[MAX_SIZE];
     int index;
-    int limit;
+    int limit = atoi(argv[1]);
 
     printf("Enter limit (integer: ) ");
     scanf("%d", &limit);
