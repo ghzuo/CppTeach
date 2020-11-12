@@ -37,7 +37,7 @@
       "args": [
         "-Xclang",
         "-fopenmp",
-        "-g",
+        "-O3",
         "--std=c++11",
         "${file}",
         "-o",
@@ -67,6 +67,69 @@
       },
       "problemMatcher": [],
       "args": [
+        "-Xclang",
+        "-fopenmp",
+        "--std=c11",
+        "-O3",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "osx": {
+        "command": "gcc"
+      },
+      "linux": {
+        "command": "gcc"
+      },
+      "windows": {
+        "command": "mingw-gcc"
+      }
+    },
+    {
+      "label": "build C++ (gdb)",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "args": [
+        "-g",
+        "--std=c++11",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-L/usr/local/lib",
+        "-lomp"
+      ],
+      "osx": {
+        "command": "g++"
+      },
+      "linux": {
+        "command": "g++"
+      },
+      "windows": {
+        "command": "mingw-g++"
+      }
+    },
+    {
+      "label": "build C (gdb)",
+      "type": "shell",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "args": [
         "--std=c11",
         "-g",
         "${file}",
@@ -83,41 +146,5 @@
         "command": "mingw-gcc"
       }
     },
-    {
-      "type": "shell",
-      "label": "C/C++: clang++ build active file",
-      "command": "/Users/ghzuo/miniconda3/bin/clang++",
-      "args": [
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "group": "build"
-    },
-    {
-      "type": "shell",
-      "label": "C/C++: g++ build active file",
-      "command": "/usr/bin/g++",
-      "args": [
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "group": "build"
-    }
   ]
 }

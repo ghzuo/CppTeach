@@ -22,7 +22,7 @@
   "configurations": [
     {
       "name": "(Debug) Launch C++",
-      //"preLaunchTask": "build C++",
+      "preLaunchTask": "build C++ (gdb)",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
